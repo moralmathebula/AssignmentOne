@@ -21,6 +21,8 @@ namespace AssignmentOne.Controllers
             return View(benefits.ToList());
         }
 
+       
+
         // GET: Benefit/Details/5
         public ActionResult Details(int? id)
         {
