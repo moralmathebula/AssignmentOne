@@ -1,0 +1,82 @@
+﻿@model IEnumerable<AssignmentOne.Models.Benefit>
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberPrefixCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fees)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreditLimit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Max_Adult)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxChild)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category.MembershipName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duration.DurationName)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MemberPrefixCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fees)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreditLimit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Max_Adult)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaxChild)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.MembershipName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duration.DurationName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.BenefitId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.BenefitId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.BenefitId })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <p>
+        @Html.ActionLink("Home", "Index", "Home")
+    </p>
+</body>
+</html>
